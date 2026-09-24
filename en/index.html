@@ -1,143 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JieePlay — Your game. Your words. Your surprises.</title>
-<meta name="description" content="A personal experience is waiting for you. Your game. Your words. Your surprises.">
-<meta property="og:title" content="JieePlay">
-<meta property="og:description" content="Your game. Your words. Your surprises.">
-<meta property="og:image" content="../assets/icons/icon-512.png">
-<link rel="icon" href="../favicon/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/responsive.css">
-<link rel="stylesheet" href="../css/animations.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JieePlay — Your game. Your words. Your surprises.</title>
+	<meta name="description" content="Someone has prepared something, just for you.">
+	<meta property="og:title" content="JieePlay">
+	<meta property="og:description" content="Your game. Your words. Your surprises.">
+	<meta property="og:image" content="../assets/icons/icon-512.png">
+	<link rel="icon" href="../favicon/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/animations.css">
+	<link rel="stylesheet" href="../css/responsive.css">
 </head>
+
 <body>
 
-<!-- HERO -->
-<section class="hero">
-	<div class="hero-bg-word" aria-hidden="true">Jiee</div>
-	<div class="hero-cards" aria-hidden="true">
-		<div class="hero-card-shape c2"></div>
-		<div class="hero-card-shape c1"></div>
-	</div>
+<main class="experience">
 
-	<div class="hero-inner">
-		<div class="hero-logo brand">JieePlay</div>
-		<h1 class="hero-tagline">Your game.<br>Your words.<br>Your surprises.</h1>
-		<p class="hero-sub">Someone took the time to prepare something, just for you.</p>
-		<a href="#" class="btn" data-game-link data-transition>Continue</a>
-	</div>
-</section>
+	<section class="opening" id="opening">
+		<div class="opening-bg-word" aria-hidden="true">JIEE</div>
+		<div class="opening-frame" aria-hidden="true"></div>
 
-<!-- INTRO -->
-<section class="intro reveal">
-	<div class="container">
-		<p class="intro-lead">You didn't end up here by chance.</p>
-		<p class="intro-second">Someone wanted you to discover something — so take a few minutes. The rest is yours to find.</p>
-	</div>
-</section>
+		<div class="opening-content">
+			<p class="opening-kicker">A personalized experience</p>
 
-<!-- MYSTERY -->
-<section class="mystery reveal">
-	<div class="container mystery-inner">
-		<span class="eyebrow">The experience</span>
-		<p class="mystery-quote">Some things are better discovered <em>at the right moment</em> — not before.</p>
-		<div class="mystery-list">
-			<div class="mystery-item"><span class="mark"></span> An interactive experience, made with you in mind</div>
-			<div class="mystery-item"><span class="mark"></span> A few small challenges, at your own pace</div>
-			<div class="mystery-item"><span class="mark"></span> A discovery worth earning, one step at a time</div>
-			<div class="mystery-item"><span class="mark"></span> And a reveal, waiting at the end</div>
+			<h1 class="opening-title">
+				Jiee<span>Play</span>
+			</h1>
+
+			<div class="opening-line" aria-hidden="true"></div>
+
+			<p class="opening-message">
+				Someone has prepared
+				<br>
+				<strong>something just for you.</strong>
+			</p>
 		</div>
-	</div>
-</section>
 
-<!-- HOW IT WORKS -->
-<section class="how reveal">
-	<div class="container">
-		<span class="eyebrow">The idea</span>
-		<h2>How does it work?</h2>
-		<div class="how-steps">
-			<div class="how-step">
-				<div class="how-step-num">01</div>
-				<div class="how-step-text"><strong>You step in.</strong><span>Nothing to prepare.</span></div>
+		<div class="scroll-cue" aria-hidden="true">
+			<span>Scroll down</span>
+			<i></i>
+		</div>
+	</section>
+
+
+	<section class="reveal-section clue-section">
+		<div class="section-number" aria-hidden="true">01</div>
+
+		<div class="clue-orbit" aria-hidden="true">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<div class="content-narrow reveal">
+			<p class="eyebrow">First clue</p>
+
+			<h2>
+				You didn't end up here
+				<em>by chance.</em>
+			</h2>
+
+			<p class="body-copy">
+				Someone took the time to prepare this experience.
+				Every detail was thought out with you in mind.
+			</p>
+		</div>
+	</section>
+
+
+	<section class="reveal-section mystery-section">
+		<div class="mystery-word" aria-hidden="true">SECRET</div>
+
+		<div class="content-narrow reveal">
+			<p class="eyebrow">Second clue</p>
+
+			<h2 class="mystery-title">
+				Some things
+				<br>
+				are meant to be discovered
+				<br>
+				<strong>at the right moment.</strong>
+			</h2>
+
+			<div class="mystery-divider" aria-hidden="true"></div>
+
+			<p class="body-copy">
+				You could try to guess.
+				But that would spoil part of the experience.
+			</p>
+		</div>
+	</section>
+
+
+	<section class="reveal-section game-section">
+		<div class="section-number section-number-light" aria-hidden="true">03</div>
+
+		<div class="content-narrow reveal">
+			<p class="eyebrow">So...</p>
+
+			<h2>
+				What is
+				<br>
+				<span>waiting for you?</span>
+			</h2>
+
+			<div class="game-statement">
+				<div class="game-statement-item">
+					<span class="game-number">01</span>
+					<div>
+						<strong>You step in.</strong>
+						<p>The journey begins.</p>
+					</div>
+				</div>
+
+				<div class="game-statement-item">
+					<span class="game-number">02</span>
+					<div>
+						<strong>You play.</strong>
+						<p>Each step reveals something.</p>
+					</div>
+				</div>
+
+				<div class="game-statement-item">
+					<span class="game-number">03</span>
+					<div>
+						<strong>You move forward.</strong>
+						<p>But not everything has been revealed yet.</p>
+					</div>
+				</div>
 			</div>
-			<div class="how-step">
-				<div class="how-step-num">02</div>
-				<div class="how-step-text"><strong>You play.</strong><span>At your own pace, whenever you feel like it.</span></div>
+		</div>
+	</section>
+
+
+	<section class="reveal-section promise-section">
+		<div class="promise-bg" aria-hidden="true">PLAY</div>
+
+		<div class="content-narrow reveal">
+			<p class="eyebrow">One last thing</p>
+
+			<h2 class="promise-title">
+				This is not
+				<br>
+				<strong>just a game.</strong>
+			</h2>
+
+			<p class="body-copy">
+				It's a little story in which you are
+				one of the characters.
+			</p>
+
+			<div class="promise-mark" aria-hidden="true">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>
-			<div class="how-step">
-				<div class="how-step-num">03</div>
-				<div class="how-step-text"><strong>You move forward.</strong><span>Each step leads to the next.</span></div>
+		</div>
+	</section>
+
+
+	<section class="reveal-section install-section">
+		<div class="section-number" aria-hidden="true">04</div>
+
+		<div class="content-narrow reveal">
+			<p class="eyebrow">After you enter</p>
+
+			<h2 class="install-title">
+				Keep
+				<br>
+				<strong>the game</strong>
+				<br>
+				with you.
+			</h2>
+
+			<p class="body-copy install-intro">
+				Once you're inside JieePlay, you can also install
+				the game directly on your phone.
+			</p>
+
+			<div class="install-progress" aria-hidden="true">
+				<div class="install-progress-step">
+					<span>01</span>
+					<strong>Discover</strong>
+				</div>
+
+				<div class="install-progress-line"></div>
+
+				<div class="install-progress-step current">
+					<span>02</span>
+					<strong>Enter</strong>
+				</div>
+
+				<div class="install-progress-line"></div>
+
+				<div class="install-progress-step">
+					<span>03</span>
+					<strong>Install</strong>
+				</div>
 			</div>
-			<div class="how-step">
-				<div class="how-step-num">04</div>
-				<div class="how-step-text"><strong>You discover.</strong><span>We'll let you find the rest.</span></div>
+
+			<div class="install-important">
+				<div class="install-important-icon" aria-hidden="true">!</div>
+
+				<div>
+					<strong>Don't do this yet</strong>
+
+					<p>
+						This page is only the introduction.
+						<strong>Enter the game first</strong>
+						using the button further down.
+					</p>
+
+					<p>
+						Once the game is open in your browser,
+						you can come back to these instructions
+						and install it on your phone.
+					</p>
+				</div>
 			</div>
+
+			<div class="install-guide">
+				<div class="install-guide-heading">
+					<span class="install-guide-label">
+						Do this once you're in the game
+					</span>
+
+					<h3>Install JieePlay</h3>
+				</div>
+
+				<div class="install-box">
+					<div class="install-tabs" role="tablist">
+						<button
+							class="install-tab-btn active"
+							type="button"
+							data-tab="android"
+							role="tab"
+							aria-selected="true"
+						>
+							Android
+						</button>
+
+						<button
+							class="install-tab-btn"
+							type="button"
+							data-tab="iphone"
+							role="tab"
+							aria-selected="false"
+						>
+							iPhone / iPad
+						</button>
+					</div>
+
+					<div
+						class="install-panel active"
+						id="install-android"
+						role="tabpanel"
+					>
+						<div class="install-device-title">
+							<span>01</span>
+							<strong>On Android</strong>
+						</div>
+
+						<div class="install-step">
+							<span class="install-step-number">1</span>
+							<div>
+								<strong>Open the menu</strong>
+								<p>
+									Once the game is open in your browser,
+									tap the three dots <em>⋮</em>.
+								</p>
+							</div>
+						</div>
+
+						<div class="install-step">
+							<span class="install-step-number">2</span>
+							<div>
+								<strong>Choose the installation option</strong>
+								<p>
+									Tap <em>“Install app”</em>
+									or <em>“Add to Home screen”</em>.
+								</p>
+							</div>
+						</div>
+
+						<div class="install-step">
+							<span class="install-step-number">3</span>
+							<div>
+								<strong>Confirm</strong>
+								<p>
+									Confirm the installation.
+									The game will then be available directly
+									from your home screen.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="install-panel"
+						id="install-iphone"
+						role="tabpanel"
+					>
+						<div class="install-device-title">
+							<span>02</span>
+							<strong>On iPhone / iPad</strong>
+						</div>
+
+						<div class="install-step">
+							<span class="install-step-number">1</span>
+							<div>
+								<strong>Open the Share menu</strong>
+								<p>
+									Once the game is open in Safari,
+									tap the <em>Share</em> button.
+								</p>
+							</div>
+						</div>
+
+						<div class="install-step">
+							<span class="install-step-number">2</span>
+							<div>
+								<strong>Add it to your Home Screen</strong>
+								<p>
+									Scroll through the options and choose
+									<em>“Add to Home Screen”</em>.
+								</p>
+							</div>
+						</div>
+
+						<div class="install-step">
+							<span class="install-step-number">3</span>
+							<div>
+								<strong>Tap Add</strong>
+								<p>
+									Confirm. The game icon will then be
+									accessible directly from your Home Screen.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<p class="install-browser-note">
+				Menu names may vary slightly depending on
+				your browser and its version.
+			</p>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!-- PWA INSTALL -->
-<section class="install reveal">
-	<div class="container">
-		<span class="eyebrow">Handy</span>
-		<div class="install-head">
-			<h2>Keep JieePlay close by.</h2>
-			<p>Add it to your home screen: it opens like a real app, even without a connection.</p>
+
+	<section class="final-gate" id="enter">
+		<div class="final-gate-bg" aria-hidden="true">JIEEPLAY</div>
+
+		<div class="final-gate-content">
+			<p class="eyebrow">Everything is ready</p>
+
+			<h2>
+				All that's left
+				<br>
+				is to <em>enter.</em>
+			</h2>
+
+			<p>
+				The next part is waiting for you.
+			</p>
+
+			<a
+				href="#"
+				class="final-enter-btn"
+				data-game-link
+				data-transition
+			>
+				<span>Enter JieePlay</span>
+				<i>→</i>
+			</a>
 		</div>
+	</section>
 
-		<div class="install-tabs">
-			<button class="install-tab-btn active" data-tab="android">Android</button>
-			<button class="install-tab-btn" data-tab="iphone">iPhone</button>
-		</div>
+</main>
 
-		<div id="install-android" class="install-panel active">
-			<ol>
-				<li>Open JieePlay in Chrome</li>
-				<li>Tap the ⋮ menu</li>
-				<li>Choose "Add to Home screen"</li>
-				<li>Confirm</li>
-			</ol>
-		</div>
-		<div id="install-iphone" class="install-panel">
-			<ol>
-				<li>Open JieePlay in Safari</li>
-				<li>Tap the Share button</li>
-				<li>Choose "Add to Home Screen"</li>
-				<li>Tap "Add"</li>
-			</ol>
-		</div>
-	</div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta reveal">
-	<div class="container">
-		<span class="eyebrow">And now</span>
-		<h2>Everything's ready.<br>All that's left is to step in.</h2>
-		<a href="#" class="btn" data-game-link data-transition>Enter JieePlay</a>
-	</div>
-</section>
-
-<footer>
-	<div class="footer-brand">JieePlay</div>
-	<div class="footer-links">
-		<a href="#">Privacy</a>
-		<a href="#">Contact</a>
-		<a href="../fr/" data-switch-lang="fr">Français</a>
-	</div>
-	<p>© 2026 JieePlay</p>
-</footer>
-
-<div class="exit-veil" id="exit-veil" aria-hidden="true"></div>
+<div
+	class="exit-veil"
+	id="exit-veil"
+	aria-hidden="true"
+></div>
 
 <script src="../js/config.js"></script>
 <script src="../js/language.js"></script>
 <script src="../js/navigation.js"></script>
+
 </body>
 </html>
