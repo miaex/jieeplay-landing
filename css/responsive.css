@@ -1,293 +1,460 @@
 /* =========================================================
-   JIEEPLAY — RESPONSIVE V3
-========================================================= */
+   JIEEPLAY — responsive.css
+   V4 — adaptation mobile / tablette / desktop
+   ========================================================= */
 
 
-/* Très petits téléphones */
+/* =========================================================
+   BASE MOBILE
+   ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
-	.container {
+	.opening {
 		padding-left: 22px;
 		padding-right: 22px;
 	}
 
-	.hero {
+	.opening-frame {
+		inset: 16px;
+	}
+
+	.opening-title {
+		font-size: clamp(56px, 18vw, 78px);
+		letter-spacing: -3px;
+	}
+
+	.opening-message {
+		font-size: clamp(21px, 6.2vw, 27px);
+	}
+
+	.opening-line {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.scroll-cue {
+		bottom: 23px;
+	}
+
+	.reveal-section {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.content-narrow {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.clue-section {
+		min-height: 82svh;
+	}
+
+	.clue-section h2 {
+		font-size: clamp(38px, 10.8vw, 54px);
+	}
+
+	.mystery-title {
+		font-size: clamp(36px, 9.8vw, 52px);
+	}
+
+	.game-section h2 {
+		font-size: clamp(41px, 11vw, 58px);
+	}
+
+	.promise-title {
+		font-size: clamp(42px, 11.5vw, 60px);
+	}
+
+	.final-gate {
 		padding-left: 22px;
 		padding-right: 22px;
 	}
 
-	.hero-logo {
-		font-size: 34px;
+	.final-gate h2 {
+		font-size: clamp(45px, 12vw, 64px);
 	}
 
-	.hero-tagline {
-		font-size: 32px;
+	.final-enter-btn {
+		width: 100%;
+		min-width: 0;
 	}
 
-	.hero-sub {
-		font-size: 14px;
+	.section-number {
+		top: 35px;
+		right: 20px;
+		font-size: 65px;
 	}
 
-	.hero-cards {
-		right: -60px;
-		transform: scale(.88);
-		transform-origin: top right;
-	}
-
-	.hero-scroll {
-		left: 22px;
-	}
-
-	.intro-lead {
-		font-size: 25px;
-	}
-
-	.mystery-quote {
-		font-size: 27px;
-	}
-
-	.final-cta h2 {
-		font-size: 31px;
-	}
-
-	.btn {
-		min-height: 53px;
-		padding: 15px 25px;
-	}
-
-}
-
-
-/* Tablettes */
-
-@media (min-width: 640px) {
-
-	.container {
-		max-width: 600px;
-	}
-
-	.hero {
-		padding-left: 48px;
-		padding-right: 48px;
-	}
-
-	.hero-tagline {
-		font-size: 42px;
-	}
-
-	.hero-cards {
-		right: 4%;
-		transform: scale(1.05);
-	}
-
-	.intro-lead {
-		font-size: 32px;
-	}
-
-	.mystery-quote {
-		font-size: 36px;
-	}
-
-	.install-layout {
-		flex-direction: row;
-		align-items: flex-start;
-	}
-
-	.install-copy {
-		flex: 1;
-	}
-
-	.install-box {
-		flex: 1;
-	}
-
-}
-
-
-/* Desktop */
-
-@media (min-width: 768px) {
-
-	.container {
-		max-width: 720px;
-	}
-
-	section {
-		padding: 135px 0;
-	}
-
-	.hero {
-		padding: 120px 8vw 100px;
-	}
-
-	.hero-inner {
-		max-width: 520px;
-	}
-
-	.hero-logo {
-		font-size: 45px;
-	}
-
-	.hero-tagline {
-		font-size: 52px;
-	}
-
-	.hero-sub {
-		font-size: 16px;
-	}
-
-	.hero-cards {
-		width: 210px;
-		height: 270px;
-
-		right: 8vw;
-		top: 17%;
-
-		transform: scale(1.15);
-	}
-
-	.hero-orbit-one {
-		width: 430px;
-		height: 430px;
-
-		right: -240px;
-	}
-
-	.hero-orbit-two {
-		width: 270px;
-		height: 270px;
-
+	.clue-orbit {
 		right: -145px;
+		bottom: -105px;
+		width: 280px;
+		height: 280px;
 	}
 
-	.hero-scroll {
-		left: 8vw;
-		bottom: 35px;
+	.mystery-word {
+		font-size: 30vw;
 	}
 
-	.intro-content {
-		max-width: 650px;
+	.promise-bg {
+		right: -70px;
+		bottom: -15px;
+		font-size: 43vw;
 	}
 
-	.intro-lead {
-		font-size: 39px;
+	.final-gate::before {
+		width: 390px;
+		height: 390px;
 	}
 
-	.intro-second {
-		font-size: 25px;
+	.final-gate::after {
+		width: 235px;
+		height: 235px;
 	}
 
-	.mystery-quote {
-		font-size: 44px;
+	.final-gate-bg {
+		font-size: 27vw;
 	}
-
-	.mystery-list {
-		max-width: 570px;
-	}
-
-	.how-heading {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-end;
-	}
-
-	.how-heading h2 {
-		font-size: 44px;
-	}
-
-	.how-heading p {
-		max-width: 28ch;
-	}
-
-	.final-cta h2 {
-		font-size: 48px;
-	}
-
 }
 
 
-/* Grand écran */
+/* =========================================================
+   PETITS ÉCRANS — hauteur réduite
+   ========================================================= */
 
-@media (min-width: 1024px) {
+@media (max-width: 480px) and (max-height: 700px) {
 
-	.container {
-		max-width: 820px;
+	.opening {
+		padding-top: 50px;
+		padding-bottom: 80px;
 	}
 
-	.hero-inner {
-		max-width: 600px;
+	.opening-kicker {
+		margin-bottom: 17px;
 	}
 
-	.hero-tagline {
-		font-size: 64px;
+	.opening-line {
+		margin-top: 21px;
+		margin-bottom: 21px;
 	}
 
-	.hero-cards {
-		right: 12vw;
-		top: 19%;
-		transform: scale(1.25);
+	.scroll-cue {
+		bottom: 17px;
 	}
 
-	.mystery-inner {
-		max-width: 760px;
+	.scroll-cue i {
+		height: 25px;
 	}
 
-	.how-steps {
-		max-width: 650px;
+	.reveal-section {
+		padding-top: 85px;
+		padding-bottom: 85px;
 	}
 
-	.install-layout {
-		gap: 80px;
+	.clue-section,
+	.mystery-section,
+	.game-section,
+	.promise-section,
+	.final-gate {
+		min-height: auto;
+		padding-top: 115px;
+		padding-bottom: 115px;
 	}
-
 }
 
 
-/* Très grands écrans */
+/* =========================================================
+   TABLETTES
+   ========================================================= */
 
-@media (min-width: 1440px) {
+@media (min-width: 600px) {
 
-	section {
-		padding: 165px 0;
+	.content-narrow {
+		width: min(100%, 720px);
+		padding-left: 42px;
+		padding-right: 42px;
 	}
 
-	.hero {
-		padding-left: 12vw;
+	.opening {
+		padding-left: 42px;
+		padding-right: 42px;
 	}
 
-	.hero-tagline {
-		font-size: 72px;
+	.opening-frame {
+		inset: 32px;
 	}
 
-	.hero-cards {
-		right: 15vw;
-		transform: scale(1.4);
+	.opening-title {
+		font-size: clamp(82px, 14vw, 118px);
 	}
 
-	.hero-scroll {
-		left: 12vw;
+	.opening-message {
+		font-size: clamp(27px, 4.5vw, 36px);
 	}
 
+	.reveal-section {
+		padding-top: 145px;
+		padding-bottom: 145px;
+	}
+
+	.clue-section h2 {
+		font-size: clamp(52px, 8vw, 70px);
+	}
+
+	.mystery-title {
+		font-size: clamp(48px, 7.5vw, 68px);
+	}
+
+	.game-section h2 {
+		font-size: clamp(55px, 8vw, 76px);
+	}
+
+	.promise-title {
+		font-size: clamp(56px, 8vw, 82px);
+	}
+
+	.final-gate h2 {
+		font-size: clamp(62px, 9vw, 88px);
+	}
+
+	.final-enter-btn {
+		min-width: 350px;
+	}
+
+	.section-number {
+		top: 65px;
+		right: 42px;
+		font-size: 105px;
+	}
+
+	.clue-orbit {
+		right: -80px;
+		bottom: -100px;
+		width: 380px;
+		height: 380px;
+	}
+
+	.promise-bg {
+		right: -40px;
+		bottom: -65px;
+	}
+
+	.final-gate::before {
+		width: 650px;
+		height: 650px;
+	}
+
+	.final-gate::after {
+		width: 400px;
+		height: 400px;
+	}
 }
 
 
-/* Sécurité */
+/* =========================================================
+   DESKTOP
+   ========================================================= */
 
-html,
-body {
-	max-width: 100%;
-	overflow-x: hidden;
-}
-	.hero-cards { right: 10vw; }
+@media (min-width: 900px) {
+
+	.content-narrow {
+		width: min(100%, 820px);
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+
+	.opening {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+
+	.opening-frame {
+		inset: 40px;
+	}
+
+	.opening-title {
+		font-size: clamp(100px, 11vw, 150px);
+		letter-spacing: -6px;
+	}
+
+	.opening-message {
+		font-size: clamp(30px, 3.2vw, 42px);
+	}
+
+	.opening-bg-word {
+		font-size: min(43vw, 700px);
+	}
+
+	.reveal-section {
+		padding-top: 180px;
+		padding-bottom: 180px;
+	}
+
+	.clue-section {
+		min-height: 90svh;
+	}
+
+	.clue-section h2 {
+		font-size: clamp(60px, 6vw, 88px);
+	}
+
+	.mystery-title {
+		font-size: clamp(58px, 6vw, 84px);
+	}
+
+	.game-section h2 {
+		font-size: clamp(64px, 6.5vw, 92px);
+	}
+
+	.promise-title {
+		font-size: clamp(68px, 7vw, 100px);
+	}
+
+	.final-gate h2 {
+		font-size: clamp(74px, 7vw, 108px);
+	}
+
+	.section-number {
+		top: 70px;
+		right: 60px;
+		font-size: 130px;
+	}
+
+	.clue-orbit {
+		right: -100px;
+		bottom: -120px;
+		width: 480px;
+		height: 480px;
+	}
+
+	.mystery-word {
+		font-size: min(30vw, 460px);
+	}
+
+	.promise-bg {
+		right: -60px;
+		bottom: -100px;
+		font-size: min(40vw, 560px);
+	}
+
+	.final-gate-bg {
+		font-size: min(29vw, 420px);
+	}
 }
 
-@media (min-width: 1440px) {
-	.hero-tagline { font-size: 40px; }
-	section { padding: 160px 0; }
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+	.content-narrow {
+		width: min(100%, 920px);
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+
+	.opening-frame {
+		inset: 50px;
+	}
+
+	.opening-title {
+		font-size: 155px;
+	}
+
+	.opening-message {
+		font-size: 43px;
+	}
+
+	.reveal-section {
+		padding-top: 210px;
+		padding-bottom: 210px;
+	}
+
+	.section-number {
+		right: 75px;
+		font-size: 155px;
+	}
+
+	.final-gate::before {
+		width: 780px;
+		height: 780px;
+	}
+
+	.final-gate::after {
+		width: 480px;
+		height: 480px;
+	}
 }
 
-html, body {
-	max-width: 100%;
-	overflow-x: hidden;
+
+/* =========================================================
+   TOUCH DEVICES
+   Évite les effets "hover" persistants après un tap
+   ========================================================= */
+
+@media (hover: none) {
+
+	.lang-btn:hover,
+	.final-enter-btn:hover {
+		transform: none;
+	}
+
+	.final-enter-btn:hover {
+		background: transparent;
+		color: var(--cream);
+		border-color: rgba(200, 154, 88, 0.65);
+		box-shadow: none;
+	}
+
+	.final-enter-btn:hover i {
+		transform: none;
+	}
 }
+
+
+/* =========================================================
+   ACCESSIBILITÉ — FOCUS
+   ========================================================= */
+
+a:focus-visible {
+	outline: 2px solid var(--gold);
+	outline-offset: 5px;
+}
+
+
+/* =========================================================
+   MODE TRÈS LARGE / HAUTE RÉSOLUTION
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+	.opening-frame {
+		inset: 60px;
+	}
+
+	.opening-title {
+		font-size: 175px;
+	}
+
+	.opening-message {
+		font-size: 46px;
+	}
+
+	.content-narrow {
+		width: min(100%, 1000px);
+	}
+
+	.reveal-section {
+		padding-top: 240px;
+		padding-bottom: 240px;
+	}
+
+	.section-number {
+		right: 100px;
+		font-size: 180px;
+	}
+	}
