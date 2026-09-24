@@ -1,39 +1,290 @@
-/* animations.css — page de sélection de langue + micro-interactions */
+/* =========================================================
+   JIEEPLAY — ANIMATIONS V3
+========================================================= */
+
+
+/* Apparition initiale du hero */
+
+.hero-logo {
+	animation: hero-enter .9s var(--ease) both;
+}
+
+
+.hero-kicker {
+	animation: hero-enter .9s var(--ease) .08s both;
+}
+
+
+.hero-tagline {
+	animation: hero-enter .95s var(--ease) .16s both;
+}
+
+
+.hero-sub {
+	animation: hero-enter .9s var(--ease) .27s both;
+}
+
+
+.btn-hero {
+	animation: hero-enter .9s var(--ease) .38s both;
+}
+
+
+.hero-note {
+	animation: hero-enter .9s var(--ease) .48s both;
+}
+
+
+@keyframes hero-enter {
+
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+}
+
+
+/* Cartes flottantes */
+
+.hero-card-shape.c1 {
+	animation: card-float 7s ease-in-out infinite;
+}
+
+
+.hero-card-shape.c2 {
+	animation: card-float-two 8s ease-in-out infinite;
+}
+
+
+@keyframes card-float {
+
+	0%,
+	100% {
+		transform: rotate(7deg) translateY(0);
+	}
+
+	50% {
+		transform: rotate(5deg) translateY(-7px);
+	}
+
+}
+
+
+@keyframes card-float-two {
+
+	0%,
+	100% {
+		transform: rotate(-5deg) translateY(0);
+	}
+
+	50% {
+		transform: rotate(-7deg) translateY(6px);
+	}
+
+}
+
+
+/* Orbites très lentes */
+
+.hero-orbit-one {
+	animation: orbit-drift 14s ease-in-out infinite;
+}
+
+
+.hero-orbit-two {
+	animation: orbit-drift-two 11s ease-in-out infinite;
+}
+
+
+@keyframes orbit-drift {
+
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	50% {
+		transform: translate(-8px, -8px);
+	}
+
+}
+
+
+@keyframes orbit-drift-two {
+
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	50% {
+		transform: translate(6px, -5px);
+	}
+
+}
+
+
+/* Scroll indicator */
+
+.hero-scroll {
+	animation: scroll-pulse 2.8s ease-in-out infinite;
+}
+
+
+@keyframes scroll-pulse {
+
+	0%,
+	100% {
+		opacity: .55;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+}
+
+
+/* Apparition des éléments de la section mystère */
+
+.mystery-item {
+	opacity: .25;
+	transform: translateX(-5px);
+
+	transition:
+		opacity .6s var(--ease),
+		transform .6s var(--ease);
+}
+
+
+.reveal.in-view .mystery-item {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+
+.reveal.in-view .mystery-item:nth-child(1) {
+	transition-delay: .08s;
+}
+
+
+.reveal.in-view .mystery-item:nth-child(2) {
+	transition-delay: .16s;
+}
+
+
+.reveal.in-view .mystery-item:nth-child(3) {
+	transition-delay: .24s;
+}
+
+
+.reveal.in-view .mystery-item:nth-child(4) {
+	transition-delay: .32s;
+}
+
+
+/* Numéros du parcours */
+
+.how-step {
+	opacity: .75;
+	transition:
+		opacity .5s ease,
+		transform .5s var(--ease);
+}
+
+
+.how-step:hover {
+	opacity: 1;
+	transform: translateX(4px);
+}
+
+
+/* Bouton */
+
+.btn-final {
+	animation: final-button-breathe 3.5s ease-in-out infinite;
+}
+
+
+@keyframes final-button-breathe {
+
+	0%,
+	100% {
+		box-shadow: 0 15px 45px rgba(0,0,0,.20);
+	}
+
+	50% {
+		box-shadow: 0 18px 55px rgba(199,154,85,.16);
+	}
+
+}
+
+
+/* Symbole final */
+
+.final-symbol {
+	animation: symbol-breathe 4s ease-in-out infinite;
+}
+
+
+@keyframes symbol-breathe {
+
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.06);
+	}
+
+}
+
+
+/* Transition vers le jeu */
+
+.exit-veil.active .exit-veil-word {
+	animation: veil-word .5s var(--ease) both;
+}
+
+
+@keyframes veil-word {
+
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: .9;
+		transform: translateY(0);
+	}
+
+}
+
+
+/* Respect de l'accessibilité */
 
 @media (prefers-reduced-motion: reduce) {
-	*, *::before, *::after {
-		animation-duration: 0.01ms !important;
+
+	*,
+	*::before,
+	*::after {
+
+		animation-duration: .01ms !important;
 		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
+		transition-duration: .01ms !important;
 		scroll-behavior: auto !important;
+
 	}
+
 }
-
-/* --- Page racine : sélection de langue --- */
-
-.lang-select-page {
-	min-height: 100svh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	background: var(--cream, #fbf7f2);
-	padding: 40px 28px;
-	position: relative;
-	overflow: hidden;
-}
-
-.lang-bg-word {
-	position: absolute;
-	top: 6%;
-	left: 50%;
-	transform: translateX(-50%);
-	font-family: var(--font-display, serif);
-	font-size: 26vw;
-	font-weight: 600;
-	color: var(--ink, #3b1b2b);
-	opacity: 0.04;
 	white-space: nowrap;
 	pointer-events: none;
 	line-height: 1;
