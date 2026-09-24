@@ -1,39 +1,284 @@
-/* responsive.css — mobile-first, chaque section repensée (pas juste agrandie) */
+/* =========================================================
+   JIEEPLAY — RESPONSIVE V3
+========================================================= */
+
+
+/* Très petits téléphones */
 
 @media (max-width: 380px) {
-	.hero-tagline { font-size: 23px; }
-	.hero-bg-word { font-size: 26vw; }
-	.mystery-quote { font-size: 23px; }
-	.final-cta h2 { font-size: 27px; }
-	.btn { padding: 14px 28px; font-size: 14px; }
-	.hero-cards { right: -46px; }
+
+	.container {
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+
+	.hero {
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+
+	.hero-logo {
+		font-size: 34px;
+	}
+
+	.hero-tagline {
+		font-size: 32px;
+	}
+
+	.hero-sub {
+		font-size: 14px;
+	}
+
+	.hero-cards {
+		right: -60px;
+		transform: scale(.88);
+		transform-origin: top right;
+	}
+
+	.hero-scroll {
+		left: 22px;
+	}
+
+	.intro-lead {
+		font-size: 25px;
+	}
+
+	.mystery-quote {
+		font-size: 27px;
+	}
+
+	.final-cta h2 {
+		font-size: 31px;
+	}
+
+	.btn {
+		min-height: 53px;
+		padding: 15px 25px;
+	}
+
 }
+
+
+/* Tablettes */
 
 @media (min-width: 640px) {
-	.container { max-width: 560px; }
+
+	.container {
+		max-width: 600px;
+	}
+
+	.hero {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+
+	.hero-tagline {
+		font-size: 42px;
+	}
+
+	.hero-cards {
+		right: 4%;
+		transform: scale(1.05);
+	}
+
+	.intro-lead {
+		font-size: 32px;
+	}
+
+	.mystery-quote {
+		font-size: 36px;
+	}
+
+	.install-layout {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.install-copy {
+		flex: 1;
+	}
+
+	.install-box {
+		flex: 1;
+	}
+
 }
+
+
+/* Desktop */
 
 @media (min-width: 768px) {
-	.container { max-width: 620px; }
-	section { padding: 130px 0; }
-	.hero-tagline { font-size: 34px; }
-	.hero-sub { font-size: 17px; }
-	.mystery-quote { font-size: 32px; }
-	.final-cta h2 { font-size: 38px; }
-	.hero-cards { width: 180px; height: 230px; top: 12%; right: 4%; }
-	.hero-card-shape { width: 130px; height: 175px; }
+
+	.container {
+		max-width: 720px;
+	}
+
+	section {
+		padding: 135px 0;
+	}
+
+	.hero {
+		padding: 120px 8vw 100px;
+	}
+
+	.hero-inner {
+		max-width: 520px;
+	}
+
+	.hero-logo {
+		font-size: 45px;
+	}
+
+	.hero-tagline {
+		font-size: 52px;
+	}
+
+	.hero-sub {
+		font-size: 16px;
+	}
+
+	.hero-cards {
+		width: 210px;
+		height: 270px;
+
+		right: 8vw;
+		top: 17%;
+
+		transform: scale(1.15);
+	}
+
+	.hero-orbit-one {
+		width: 430px;
+		height: 430px;
+
+		right: -240px;
+	}
+
+	.hero-orbit-two {
+		width: 270px;
+		height: 270px;
+
+		right: -145px;
+	}
+
+	.hero-scroll {
+		left: 8vw;
+		bottom: 35px;
+	}
+
+	.intro-content {
+		max-width: 650px;
+	}
+
+	.intro-lead {
+		font-size: 39px;
+	}
+
+	.intro-second {
+		font-size: 25px;
+	}
+
+	.mystery-quote {
+		font-size: 44px;
+	}
+
+	.mystery-list {
+		max-width: 570px;
+	}
+
+	.how-heading {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	.how-heading h2 {
+		font-size: 44px;
+	}
+
+	.how-heading p {
+		max-width: 28ch;
+	}
+
+	.final-cta h2 {
+		font-size: 48px;
+	}
+
 }
 
+
+/* Grand écran */
+
 @media (min-width: 1024px) {
-	.hero { padding-left: 8vw; align-items: flex-start; }
-	.hero-inner { max-width: 480px; }
-	.intro .container,
-	.mystery .container,
-	.how .container,
-	.install .container,
-	.final-cta .container {
-		padding-left: 8vw;
+
+	.container {
+		max-width: 820px;
 	}
+
+	.hero-inner {
+		max-width: 600px;
+	}
+
+	.hero-tagline {
+		font-size: 64px;
+	}
+
+	.hero-cards {
+		right: 12vw;
+		top: 19%;
+		transform: scale(1.25);
+	}
+
+	.mystery-inner {
+		max-width: 760px;
+	}
+
+	.how-steps {
+		max-width: 650px;
+	}
+
+	.install-layout {
+		gap: 80px;
+	}
+
+}
+
+
+/* Très grands écrans */
+
+@media (min-width: 1440px) {
+
+	section {
+		padding: 165px 0;
+	}
+
+	.hero {
+		padding-left: 12vw;
+	}
+
+	.hero-tagline {
+		font-size: 72px;
+	}
+
+	.hero-cards {
+		right: 15vw;
+		transform: scale(1.4);
+	}
+
+	.hero-scroll {
+		left: 12vw;
+	}
+
+}
+
+
+/* Sécurité */
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
 	.hero-cards { right: 10vw; }
 }
 
