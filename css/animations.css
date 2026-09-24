@@ -1,14 +1,15 @@
 /* =========================================================
    JIEEPLAY — animations.css
-   Accueil + micro-interactions
+   V4 — mouvement, apparition, profondeur
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   ACCESSIBILITÉ — réduction des animations
-   --------------------------------------------------------- */
+/* =========================================================
+   RÉDUCTION DES ANIMATIONS
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
 	*,
 	*::before,
 	*::after {
@@ -17,16 +18,22 @@
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
+
+	.reveal {
+		opacity: 1 !important;
+		transform: none !important;
+	}
 }
 
 
 /* =========================================================
-   PAGE D'ACCUEIL — SÉLECTION DE LANGUE
+   ÉCRAN DE LANGUE
    ========================================================= */
 
 .lang-select-page {
 	min-height: 100svh;
 	width: 100%;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -48,11 +55,6 @@
 	padding: 40px 24px;
 }
 
-
-/* ---------------------------------------------------------
-   GRAND "JIEE" EN ARRIÈRE-PLAN
-   --------------------------------------------------------- */
-
 .lang-bg-word {
 	position: absolute;
 
@@ -64,24 +66,20 @@
 	font-family: var(--font-display, Georgia, serif);
 	font-size: clamp(150px, 42vw, 420px);
 	font-weight: 600;
-	line-height: 0.8;
 
+	line-height: 0.8;
 	letter-spacing: -0.06em;
 
 	color: var(--ink, #3b1b2b);
 	opacity: 0.035;
 
 	white-space: nowrap;
+
 	pointer-events: none;
 	user-select: none;
 
 	animation: lang-bg-appear 1.6s ease both;
 }
-
-
-/* ---------------------------------------------------------
-   CONTENU CENTRAL
-   --------------------------------------------------------- */
 
 .lang-select-page > *:not(.lang-bg-word) {
 	position: relative;
@@ -90,6 +88,7 @@
 
 .lang-logo {
 	font-family: var(--font-display, Georgia, serif);
+
 	font-size: clamp(42px, 12vw, 64px);
 	font-weight: 600;
 
@@ -100,41 +99,31 @@
 
 	margin-bottom: 18px;
 
-	animation: lang-fade-up 0.9s var(--ease, ease) both;
+	animation:
+		lang-fade-up 0.9s var(--ease, ease) both;
 }
-
-
-/* ---------------------------------------------------------
-   SLOGAN
-   --------------------------------------------------------- */
 
 .lang-tagline {
 	margin: 0 auto 46px;
 
 	font-family: var(--font-body, sans-serif);
 	font-size: clamp(15px, 4vw, 18px);
+
 	line-height: 1.75;
 
 	color: var(--text-soft, #8a7686);
 
 	max-width: 360px;
 
-	animation: lang-fade-up 0.9s var(--ease, ease) 0.12s both;
+	animation:
+		lang-fade-up 0.9s var(--ease, ease) 0.12s both;
 }
-
-.lang-tagline br + * {
-	display: inline;
-}
-
-
-/* ---------------------------------------------------------
-   INVITATION
-   --------------------------------------------------------- */
 
 .lang-prompt {
 	margin: 0 0 22px;
 
 	font-family: var(--font-body, sans-serif);
+
 	font-size: 12px;
 	font-weight: 600;
 
@@ -143,24 +132,22 @@
 
 	color: var(--gold, #c79a55);
 
-	animation: lang-fade-up 0.9s var(--ease, ease) 0.24s both;
+	animation:
+		lang-fade-up 0.9s var(--ease, ease) 0.24s both;
 }
-
-
-/* ---------------------------------------------------------
-   BOUTONS DE LANGUE
-   --------------------------------------------------------- */
 
 .lang-buttons {
 	display: flex;
 	flex-direction: column;
+
 	gap: 13px;
 
 	width: min(100%, 320px);
 
 	margin: 0 auto;
 
-	animation: lang-fade-up 0.9s var(--ease, ease) 0.36s both;
+	animation:
+		lang-fade-up 0.9s var(--ease, ease) 0.36s both;
 }
 
 .lang-btn {
@@ -184,6 +171,7 @@
 	color: var(--ink, #3b1b2b);
 
 	font-family: var(--font-body, sans-serif);
+
 	font-size: 16px;
 	font-weight: 600;
 
@@ -199,7 +187,8 @@
 		box-shadow 0.35s ease,
 		background 0.35s ease;
 
-	animation: lang-button-enter 0.8s var(--ease, ease) both;
+	animation:
+		lang-button-enter 0.8s var(--ease, ease) both;
 }
 
 .lang-btn:nth-child(2) {
@@ -222,11 +211,6 @@
 	transform: translateY(-1px);
 }
 
-
-/* ---------------------------------------------------------
-   PETITE FLÈCHE
-   --------------------------------------------------------- */
-
 .lang-btn::after {
 	content: "→";
 
@@ -245,11 +229,6 @@
 	transform: translateX(5px);
 	color: var(--bordeaux, #6e2f42);
 }
-
-
-/* ---------------------------------------------------------
-   PETITS MOTIFS DÉCORATIFS
-   --------------------------------------------------------- */
 
 .lang-select-page::before,
 .lang-select-page::after {
@@ -280,63 +259,26 @@
 }
 
 
-/* ---------------------------------------------------------
-   ANIMATIONS
-   --------------------------------------------------------- */
-
-@keyframes lang-fade-up {
-	from {
-		opacity: 0;
-		transform: translateY(18px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-@keyframes lang-button-enter {
-	from {
-		opacity: 0;
-		transform: translateY(15px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-@keyframes lang-bg-appear {
-	from {
-		opacity: 0;
-		transform: translate(-50%, -46%);
-	}
-
-	to {
-		opacity: 0.035;
-		transform: translate(-50%, -50%);
-	}
-}
-
-
 /* =========================================================
-   ANIMATIONS DES SECTIONS DE LA LANDING PAGE
+   APPARITION DES SECTIONS
    ========================================================= */
 
 .reveal {
 	opacity: 0;
-	transform: translateY(28px);
+
+	transform:
+		translateY(34px);
 
 	transition:
-		opacity 0.9s var(--ease, ease),
-		transform 0.9s var(--ease, ease);
+		opacity 1s var(--ease, ease),
+		transform 1s var(--ease, ease);
 }
 
 .reveal.in-view {
 	opacity: 1;
-	transform: translateY(0);
+
+	transform:
+		translateY(0);
 }
 
 .reveal.d1 {
@@ -353,11 +295,101 @@
 
 
 /* =========================================================
-   MICRO-INTERACTIONS
+   MICRO-MOUVEMENT DES ÉLÉMENTS D'AMBIANCE
+   ========================================================= */
+
+.opening-bg-word {
+	animation:
+		opening-word-in 1.8s var(--ease) both,
+		opening-word-breathe 9s ease-in-out 2s infinite alternate;
+}
+
+.opening-frame {
+	animation:
+		frame-in 1.3s var(--ease) 0.15s both;
+}
+
+.opening-kicker {
+	animation:
+		opening-content-in 1s var(--ease) 0.1s both;
+}
+
+.opening-title {
+	animation:
+		opening-content-in 1s var(--ease) 0.18s both;
+}
+
+.opening-line {
+	transform-origin: center;
+
+	animation:
+		line-expand 0.9s var(--ease) 0.55s both;
+}
+
+.opening-message {
+	animation:
+		opening-content-in 1s var(--ease) 0.42s both;
+}
+
+.scroll-cue {
+	animation:
+		scroll-cue-in 1s var(--ease) 1.1s both;
+}
+
+.scroll-cue i {
+	animation:
+		scroll-line 1.8s ease-in-out 1.8s infinite;
+}
+
+
+/* =========================================================
+   ORBITE
+   ========================================================= */
+
+.clue-orbit {
+	animation:
+		orbit-drift 18s ease-in-out infinite alternate;
+}
+
+.clue-orbit span {
+	animation:
+		orbit-pulse 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.final-gate::before {
+	animation:
+		final-ring-breathe 9s ease-in-out infinite alternate;
+}
+
+.final-gate::after {
+	animation:
+		final-ring-breathe 7s ease-in-out 1s infinite alternate;
+}
+
+.final-enter-btn {
+	animation:
+		cta-arrive 1s var(--ease) 0.25s both;
+}
+
+.final-enter-btn i {
+	animation:
+		cta-arrow 2.5s ease-in-out 1.5s infinite;
+}
+
+
+/* =========================================================
+   TRANSITION VERS LE JEU
    ========================================================= */
 
 .btn-transitioning {
 	pointer-events: none;
+
+	transform: scale(0.98) !important;
 }
 
 .exit-veil {
@@ -368,4 +400,208 @@
 .exit-veil.active {
 	opacity: 1;
 	pointer-events: all;
+}
+
+
+/* =========================================================
+   KEYFRAMES — LANGUE
+   ========================================================= */
+
+@keyframes lang-fade-up {
+
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes lang-button-enter {
+
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes lang-bg-appear {
+
+	from {
+		opacity: 0;
+		transform: translate(-50%, -46%);
+	}
+
+	to {
+		opacity: 0.035;
+		transform: translate(-50%, -50%);
+	}
+}
+
+
+/* =========================================================
+   KEYFRAMES — V4
+   ========================================================= */
+
+@keyframes opening-word-in {
+
+	from {
+		opacity: 0;
+		transform: translate(-50%, -47%);
+	}
+
+	to {
+		opacity: 0.035;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes opening-word-breathe {
+
+	from {
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	to {
+		transform: translate(-50%, -50%) scale(1.025);
+	}
+}
+
+@keyframes frame-in {
+
+	from {
+		opacity: 0;
+		transform: scale(0.985);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes opening-content-in {
+
+	from {
+		opacity: 0;
+		transform: translateY(22px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes line-expand {
+
+	from {
+		opacity: 0;
+		transform: scaleX(0);
+	}
+
+	to {
+		opacity: 1;
+		transform: scaleX(1);
+	}
+}
+
+@keyframes scroll-cue-in {
+
+	from {
+		opacity: 0;
+		transform: translate(-50%, 12px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+
+@keyframes scroll-line {
+
+	0%,
+	100% {
+		opacity: 0.45;
+		transform: scaleY(0.75);
+		transform-origin: top;
+	}
+
+	50% {
+		opacity: 1;
+		transform: scaleY(1);
+		transform-origin: top;
+	}
+}
+
+@keyframes orbit-drift {
+
+	from {
+		transform: translate3d(0, 0, 0) rotate(0deg);
+	}
+
+	to {
+		transform: translate3d(-10px, -8px, 0) rotate(4deg);
+	}
+}
+
+@keyframes orbit-pulse {
+
+	0%,
+	100% {
+		transform: translate(-50%, -50%) scale(0.8);
+		opacity: 0.45;
+	}
+
+	50% {
+		transform: translate(-50%, -50%) scale(1.35);
+		opacity: 1;
+	}
+}
+
+@keyframes final-ring-breathe {
+
+	from {
+		transform: translate(-50%, -50%) scale(0.97);
+		opacity: 0.7;
+	}
+
+	to {
+		transform: translate(-50%, -50%) scale(1.03);
+		opacity: 1;
+	}
+}
+
+@keyframes cta-arrive {
+
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes cta-arrow {
+
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(4px);
+	}
 	}
