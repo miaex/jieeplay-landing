@@ -866,3 +866,192 @@ h3 {
 	opacity: 1;
 	pointer-events: all;
 	}
+/* =========================================================
+   INSTALLATION PWA
+   ========================================================= */
+
+.install-section {
+	background: var(--paper);
+	min-height: 100svh;
+
+	display: flex;
+	align-items: center;
+}
+
+.install-title {
+	font-size: clamp(44px, 11vw, 78px);
+	margin-bottom: 28px;
+}
+
+.install-title strong {
+	color: var(--bordeaux);
+	font-style: italic;
+	font-weight: 500;
+}
+
+.install-intro {
+	margin-bottom: 16px;
+}
+
+.install-note {
+	max-width: 44ch;
+
+	margin: 0;
+
+	font-size: 13px;
+	line-height: 1.7;
+
+	color: var(--text-soft);
+}
+
+.install-box {
+	margin-top: 52px;
+
+	border: 1px solid var(--line);
+	background: rgba(255, 255, 255, 0.68);
+
+	box-shadow:
+		0 20px 60px rgba(53, 24, 36, 0.06);
+}
+
+.install-tabs {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	border-bottom: 1px solid var(--line);
+}
+
+.install-tab-btn {
+	position: relative;
+
+	min-height: 58px;
+
+	border: 0;
+	border-bottom: 2px solid transparent;
+
+	background: transparent;
+
+	color: var(--text-soft);
+
+	font-family: var(--font-body);
+	font-size: 13px;
+	font-weight: 600;
+
+	cursor: pointer;
+
+	transition:
+		color 0.3s ease,
+		border-color 0.3s ease,
+		background 0.3s ease;
+}
+
+.install-tab-btn.active {
+	color: var(--ink);
+	border-bottom-color: var(--gold);
+	background: rgba(200, 154, 88, 0.045);
+}
+
+.install-tab-btn:hover {
+	color: var(--ink);
+}
+
+.install-panel {
+	display: none;
+
+	padding: 30px 26px 28px;
+}
+
+.install-panel.active {
+	display: block;
+}
+
+.install-device-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	margin-bottom: 28px;
+
+	color: var(--ink);
+}
+
+.install-device-title span {
+	font-family: var(--font-display);
+	font-size: 13px;
+
+	color: var(--gold);
+}
+
+.install-device-title strong {
+	font-family: var(--font-display);
+	font-size: 25px;
+	font-weight: 500;
+}
+
+.install-step {
+	display: grid;
+	grid-template-columns: 34px 1fr;
+	gap: 15px;
+
+	padding: 19px 0;
+
+	border-top: 1px solid var(--line);
+}
+
+.install-step:last-child {
+	padding-bottom: 4px;
+}
+
+.install-step-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 30px;
+	height: 30px;
+
+	border: 1px solid rgba(200, 154, 88, 0.45);
+	border-radius: 50%;
+
+	font-family: var(--font-display);
+	font-size: 13px;
+
+	color: var(--gold);
+}
+
+.install-step strong {
+	display: block;
+
+	margin-bottom: 4px;
+
+	font-family: var(--font-display);
+	font-size: 18px;
+	font-weight: 500;
+
+	color: var(--ink);
+}
+
+.install-step p {
+	margin: 0;
+
+	font-size: 13px;
+	line-height: 1.7;
+
+	color: var(--text-soft);
+}
+
+.install-step em {
+	font-style: normal;
+	color: var(--bordeaux);
+	font-weight: 600;
+}
+
+.install-browser-note {
+	margin: 18px 0 0;
+
+	font-size: 10px;
+	line-height: 1.6;
+
+	color: var(--text-soft);
+	opacity: 0.75;
+	}
