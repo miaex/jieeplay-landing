@@ -1,29 +1,45 @@
-/* responsive.css — mobile-first, ajustements pour tablette/desktop */
+/* responsive.css — mobile-first, chaque section repensée (pas juste agrandie) */
 
 @media (max-width: 380px) {
-	.hero-logo { font-size: 36px; }
-	.hero-tagline { font-size: 19px; }
-	.btn { padding: 14px 30px; font-size: 15px; }
-	.mystery-quote { font-size: 22px; }
+	.hero-tagline { font-size: 23px; }
+	.hero-bg-word { font-size: 26vw; }
+	.mystery-quote { font-size: 23px; }
+	.final-cta h2 { font-size: 27px; }
+	.btn { padding: 14px 28px; font-size: 14px; }
+	.hero-cards { right: -46px; }
+}
+
+@media (min-width: 640px) {
+	.container { max-width: 560px; }
 }
 
 @media (min-width: 768px) {
-	.container { max-width: 640px; }
-	.hero-logo { font-size: 56px; }
-	.hero-tagline { font-size: 26px; }
-	.mystery-quote { font-size: 30px; }
-	section { padding: 120px 0; }
+	.container { max-width: 620px; }
+	section { padding: 130px 0; }
+	.hero-tagline { font-size: 34px; }
+	.hero-sub { font-size: 17px; }
+	.mystery-quote { font-size: 32px; }
+	.final-cta h2 { font-size: 38px; }
+	.hero-cards { width: 180px; height: 230px; top: 12%; right: 4%; }
+	.hero-card-shape { width: 130px; height: 175px; }
 }
 
 @media (min-width: 1024px) {
-	.container { max-width: 720px; }
-	.hero { min-height: 100vh; }
-	.mystery-icons { gap: 50px; font-size: 40px; }
+	.hero { padding-left: 8vw; align-items: flex-start; }
+	.hero-inner { max-width: 480px; }
+	.intro .container,
+	.mystery .container,
+	.how .container,
+	.install .container,
+	.final-cta .container {
+		padding-left: 8vw;
+	}
+	.hero-cards { right: 10vw; }
 }
 
 @media (min-width: 1440px) {
-	.hero-logo { font-size: 64px; }
-	section { padding: 140px 0; }
+	.hero-tagline { font-size: 40px; }
+	section { padding: 160px 0; }
 }
 
 html, body {

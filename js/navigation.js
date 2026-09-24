@@ -1,6 +1,5 @@
-// navigation.js — apparition progressive des sections au défilement,
-// bouton de changement de langue dans le footer, respect de
-// prefers-reduced-motion (§23, §25).
+// navigation.js — apparition progressive au scroll, onglets PWA,
+// transition de sortie vers le jeu, respect de prefers-reduced-motion.
 
 document.addEventListener("DOMContentLoaded", () => {
 	const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -9,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		el.setAttribute("href", CONFIG.GAME_URL);
 	});
 
+	// Apparition progressive des sections au scroll.
 	if (!reducedMotion && "IntersectionObserver" in window) {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in-view"));
 	}
 
+	// Onglets Android / iPhone.
 	const tabButtons = document.querySelectorAll(".install-tab-btn");
 	tabButtons.forEach((btn) => {
 		btn.addEventListener("click", () => {
@@ -36,7 +37,27 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
+	// Changement de langue.
 	document.querySelectorAll("[data-switch-lang]").forEach((el) => {
 		el.addEventListener("click", () => setLanguage(el.dataset.switchLang));
 	});
+
+	// Transition douce avant d'entrer dans le jeu (§19) : un bref voile
+	// plutôt qu'une navigation brutale. Ignorée si prefers-reduced-motion,
+	// et jamais utilisée sur les liens sans véritable destination ("#").
+	const veil = document.getElementById("exit-veil");
+	if (veil) {
+		document.querySelectorAll("[data-transition]").forEach((link) => {
+			link.addEventListener("click", (e) => {
+				const href = link.getAttribute("href");
+				if (!href || href === "#") return; // GAME_URL pas encore configurée
+				if (reducedMotion) return; // navigation normale, immédiate
+
+				e.preventDefault();
+				link.classList.add("btn-transitioning");
+				veil.classList.add("active");
+				setTimeout(() => { window.location.href = href; }, 420);
+			});
+		});
+	}
 });

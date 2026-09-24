@@ -9,6 +9,9 @@
 <meta property="og:description" content="Your game. Your words. Your surprises.">
 <meta property="og:image" content="../assets/icons/icon-512.png">
 <link rel="icon" href="../favicon/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/responsive.css">
 <link rel="stylesheet" href="../css/animations.css">
@@ -17,31 +20,38 @@
 
 <!-- HERO -->
 <section class="hero">
-	<div class="floating-shape" style="width:120px;height:120px;background:#e8a5a5;top:10%;left:-30px;"></div>
-	<div class="floating-shape" style="width:90px;height:90px;background:#cda05e;bottom:12%;right:-20px;animation-delay:2s;"></div>
+	<div class="hero-bg-word" aria-hidden="true">Jiee</div>
+	<div class="hero-cards" aria-hidden="true">
+		<div class="hero-card-shape c2"></div>
+		<div class="hero-card-shape c1"></div>
+	</div>
 
-	<div class="hero-logo brand">JieePlay</div>
-	<p class="hero-tagline">Your game. Your words. Your surprises.</p>
-	<p class="hero-sub">A little adventure is waiting for you.</p>
-	<a href="#" class="btn" data-game-link>Continue</a>
+	<div class="hero-inner">
+		<div class="hero-logo brand">JieePlay</div>
+		<h1 class="hero-tagline">Your game.<br>Your words.<br>Your surprises.</h1>
+		<p class="hero-sub">Someone took the time to prepare something, just for you.</p>
+		<a href="#" class="btn" data-game-link data-transition>Continue</a>
+	</div>
 </section>
 
 <!-- INTRO -->
 <section class="intro reveal">
 	<div class="container">
-		<p>If you've made it here, it's probably because someone wanted to share something with you.</p>
-		<p class="intro-second">So take a few minutes.<br>The rest is yours to discover.</p>
+		<p class="intro-lead">You didn't end up here by chance.</p>
+		<p class="intro-second">Someone wanted you to discover something — so take a few minutes. The rest is yours to find.</p>
 	</div>
 </section>
 
 <!-- MYSTERY -->
 <section class="mystery reveal">
-	<div class="container">
-		<p class="mystery-quote">"Some things are more beautiful when discovered at just the right moment."</p>
-		<div class="mystery-icons">
-			<span>💌</span>
-			<span>✨</span>
-			<span>🃏</span>
+	<div class="container mystery-inner">
+		<span class="eyebrow">The experience</span>
+		<p class="mystery-quote">Some things are better discovered <em>at the right moment</em> — not before.</p>
+		<div class="mystery-list">
+			<div class="mystery-item"><span class="mark"></span> An interactive experience, made with you in mind</div>
+			<div class="mystery-item"><span class="mark"></span> A few small challenges, at your own pace</div>
+			<div class="mystery-item"><span class="mark"></span> A discovery worth earning, one step at a time</div>
+			<div class="mystery-item"><span class="mark"></span> And a reveal, waiting at the end</div>
 		</div>
 	</div>
 </section>
@@ -49,13 +59,25 @@
 <!-- HOW IT WORKS -->
 <section class="how reveal">
 	<div class="container">
-		<span class="eyebrow">The experience</span>
+		<span class="eyebrow">The idea</span>
 		<h2>How does it work?</h2>
 		<div class="how-steps">
-			<div class="how-step">You step in.</div>
-			<div class="how-step">You play.</div>
-			<div class="how-step">You move forward.</div>
-			<div class="how-step">And you'll discover the rest when the time is right.</div>
+			<div class="how-step">
+				<div class="how-step-num">01</div>
+				<div class="how-step-text"><strong>You step in.</strong><span>Nothing to prepare.</span></div>
+			</div>
+			<div class="how-step">
+				<div class="how-step-num">02</div>
+				<div class="how-step-text"><strong>You play.</strong><span>At your own pace, whenever you feel like it.</span></div>
+			</div>
+			<div class="how-step">
+				<div class="how-step-num">03</div>
+				<div class="how-step-text"><strong>You move forward.</strong><span>Each step leads to the next.</span></div>
+			</div>
+			<div class="how-step">
+				<div class="how-step-num">04</div>
+				<div class="how-step-text"><strong>You discover.</strong><span>We'll let you find the rest.</span></div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -64,8 +86,10 @@
 <section class="install reveal">
 	<div class="container">
 		<span class="eyebrow">Handy</span>
-		<h2>Keep JieePlay close by.</h2>
-		<p style="margin-top:14px;">JieePlay runs right on your phone. You can add it to your home screen to pick up your adventure anytime.</p>
+		<div class="install-head">
+			<h2>Keep JieePlay close by.</h2>
+			<p>Add it to your home screen: it opens like a real app, even without a connection.</p>
+		</div>
 
 		<div class="install-tabs">
 			<button class="install-tab-btn active" data-tab="android">Android</button>
@@ -74,18 +98,18 @@
 
 		<div id="install-android" class="install-panel active">
 			<ol>
-				<li>Open JieePlay in Chrome.</li>
-				<li>Tap the ⋮ menu.</li>
-				<li>Choose "Add to Home screen" or "Install app".</li>
-				<li>Confirm.</li>
+				<li>Open JieePlay in Chrome</li>
+				<li>Tap the ⋮ menu</li>
+				<li>Choose "Add to Home screen"</li>
+				<li>Confirm</li>
 			</ol>
 		</div>
 		<div id="install-iphone" class="install-panel">
 			<ol>
-				<li>Open JieePlay in Safari.</li>
-				<li>Tap the Share button.</li>
-				<li>Choose "Add to Home Screen".</li>
-				<li>Tap "Add".</li>
+				<li>Open JieePlay in Safari</li>
+				<li>Tap the Share button</li>
+				<li>Choose "Add to Home Screen"</li>
+				<li>Tap "Add"</li>
 			</ol>
 		</div>
 	</div>
@@ -94,13 +118,14 @@
 <!-- FINAL CTA -->
 <section class="final-cta reveal">
 	<div class="container">
-		<h2>So...<br>Shall we begin?</h2>
-		<a href="#" class="btn" data-game-link>Continue</a>
+		<span class="eyebrow">And now</span>
+		<h2>Everything's ready.<br>All that's left is to step in.</h2>
+		<a href="#" class="btn" data-game-link data-transition>Enter JieePlay</a>
 	</div>
 </section>
 
 <footer>
-	<div class="footer-brand brand">JieePlay</div>
+	<div class="footer-brand">JieePlay</div>
 	<div class="footer-links">
 		<a href="#">Privacy</a>
 		<a href="#">Contact</a>
@@ -108,6 +133,8 @@
 	</div>
 	<p>© 2026 JieePlay</p>
 </footer>
+
+<div class="exit-veil" id="exit-veil" aria-hidden="true"></div>
 
 <script src="../js/config.js"></script>
 <script src="../js/language.js"></script>
