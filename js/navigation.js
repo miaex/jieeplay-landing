@@ -28,14 +28,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Onglets Android / iPhone.
 	const tabButtons = document.querySelectorAll(".install-tab-btn");
-	tabButtons.forEach((btn) => {
-		btn.addEventListener("click", () => {
-			tabButtons.forEach((b) => b.classList.remove("active"));
-			btn.classList.add("active");
-			document.querySelectorAll(".install-panel").forEach((p) => p.classList.remove("active"));
-			document.getElementById(`install-${btn.dataset.tab}`).classList.add("active");
+
+tabButtons.forEach((btn) => {
+	btn.addEventListener("click", () => {
+
+		tabButtons.forEach((b) => {
+			b.classList.remove("active");
+			b.setAttribute("aria-selected", "false");
 		});
+
+		btn.classList.add("active");
+		btn.setAttribute("aria-selected", "true");
+
+		document
+			.querySelectorAll(".install-panel")
+			.forEach((p) => p.classList.remove("active"));
+
+		const panel = document.getElementById(
+			`install-${btn.dataset.tab}`
+		);
+
+		if (panel) {
+			panel.classList.add("active");
+		}
 	});
+});
 
 	// Changement de langue.
 	document.querySelectorAll("[data-switch-lang]").forEach((el) => {
