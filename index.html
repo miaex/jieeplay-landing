@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JieePlay</title>
+<meta name="description" content="JieePlay — Ton jeu. Tes mots. Tes surprises.">
+<link rel="icon" href="favicon/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="lang-select-page">
+	<div class="lang-logo">JieePlay</div>
+	<p class="lang-tagline">Ton jeu. Tes mots. Tes surprises.<br>Your game. Your words. Your surprises.</p>
+
+	<p class="lang-prompt">Choisis ta langue · Choose your language</p>
+
+	<div class="lang-buttons">
+		<a href="fr/" class="lang-btn" data-lang-btn="fr" data-switch-lang="fr">FRANÇAIS</a>
+		<a href="en/" class="lang-btn" data-lang-btn="en" data-switch-lang="en">ENGLISH</a>
+	</div>
+</div>
+
+<script src="js/language.js"></script>
+<script>
+	suggestBrowserLanguage();
+	document.querySelectorAll("[data-switch-lang]").forEach((el) => {
+		el.addEventListener("click", () => setLanguage(el.dataset.switchLang));
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* responsive.css — mobile-first, ajustements pour tablette/desktop */
+
+@media (max-width: 380px) {
+	.hero-logo { font-size: 36px; }
+	.hero-tagline { font-size: 19px; }
+	.btn { padding: 14px 30px; font-size: 15px; }
+	.mystery-quote { font-size: 22px; }
+}
+
+@media (min-width: 768px) {
+	.container { max-width: 640px; }
+	.hero-logo { font-size: 56px; }
+	.hero-tagline { font-size: 26px; }
+	.mystery-quote { font-size: 30px; }
+	section { padding: 120px 0; }
+}
+
+@media (min-width: 1024px) {
+	.container { max-width: 720px; }
+	.hero { min-height: 100vh; }
+	.mystery-icons { gap: 50px; font-size: 40px; }
+}
+
+@media (min-width: 1440px) {
+	.hero-logo { font-size: 64px; }
+	section { padding: 140px 0; }
+}
+
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
