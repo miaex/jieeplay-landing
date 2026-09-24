@@ -1,42 +1,290 @@
 /* =========================================================
-   JIEEPLAY — ANIMATIONS V3
-========================================================= */
+   JIEEPLAY — animations.css
+   Accueil + micro-interactions
+   ========================================================= */
 
 
-/* Apparition initiale du hero */
+/* ---------------------------------------------------------
+   ACCESSIBILITÉ — réduction des animations
+   --------------------------------------------------------- */
 
-.hero-logo {
-	animation: hero-enter .9s var(--ease) both;
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 
-.hero-kicker {
-	animation: hero-enter .9s var(--ease) .08s both;
+/* =========================================================
+   PAGE D'ACCUEIL — SÉLECTION DE LANGUE
+   ========================================================= */
+
+.lang-select-page {
+	min-height: 100svh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	overflow: hidden;
+
+	text-align: center;
+
+	background:
+		radial-gradient(
+			circle at 50% 35%,
+			rgba(199, 154, 85, 0.07),
+			transparent 38%
+		),
+		var(--cream, #fbf7f2);
+
+	padding: 40px 24px;
 }
 
 
-.hero-tagline {
-	animation: hero-enter .95s var(--ease) .16s both;
+/* ---------------------------------------------------------
+   GRAND "JIEE" EN ARRIÈRE-PLAN
+   --------------------------------------------------------- */
+
+.lang-bg-word {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+
+	font-family: var(--font-display, Georgia, serif);
+	font-size: clamp(150px, 42vw, 420px);
+	font-weight: 600;
+	line-height: 0.8;
+
+	letter-spacing: -0.06em;
+
+	color: var(--ink, #3b1b2b);
+	opacity: 0.035;
+
+	white-space: nowrap;
+	pointer-events: none;
+	user-select: none;
+
+	animation: lang-bg-appear 1.6s ease both;
 }
 
 
-.hero-sub {
-	animation: hero-enter .9s var(--ease) .27s both;
+/* ---------------------------------------------------------
+   CONTENU CENTRAL
+   --------------------------------------------------------- */
+
+.lang-select-page > *:not(.lang-bg-word) {
+	position: relative;
+	z-index: 2;
+}
+
+.lang-logo {
+	font-family: var(--font-display, Georgia, serif);
+	font-size: clamp(42px, 12vw, 64px);
+	font-weight: 600;
+
+	line-height: 1;
+	letter-spacing: -1.5px;
+
+	color: var(--ink, #3b1b2b);
+
+	margin-bottom: 18px;
+
+	animation: lang-fade-up 0.9s var(--ease, ease) both;
 }
 
 
-.btn-hero {
-	animation: hero-enter .9s var(--ease) .38s both;
+/* ---------------------------------------------------------
+   SLOGAN
+   --------------------------------------------------------- */
+
+.lang-tagline {
+	margin: 0 auto 46px;
+
+	font-family: var(--font-body, sans-serif);
+	font-size: clamp(15px, 4vw, 18px);
+	line-height: 1.75;
+
+	color: var(--text-soft, #8a7686);
+
+	max-width: 360px;
+
+	animation: lang-fade-up 0.9s var(--ease, ease) 0.12s both;
+}
+
+.lang-tagline br + * {
+	display: inline;
 }
 
 
-.hero-note {
-	animation: hero-enter .9s var(--ease) .48s both;
+/* ---------------------------------------------------------
+   INVITATION
+   --------------------------------------------------------- */
+
+.lang-prompt {
+	margin: 0 0 22px;
+
+	font-family: var(--font-body, sans-serif);
+	font-size: 12px;
+	font-weight: 600;
+
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+
+	color: var(--gold, #c79a55);
+
+	animation: lang-fade-up 0.9s var(--ease, ease) 0.24s both;
 }
 
 
-@keyframes hero-enter {
+/* ---------------------------------------------------------
+   BOUTONS DE LANGUE
+   --------------------------------------------------------- */
 
+.lang-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 13px;
+
+	width: min(100%, 320px);
+
+	margin: 0 auto;
+
+	animation: lang-fade-up 0.9s var(--ease, ease) 0.36s both;
+}
+
+.lang-btn {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	min-height: 62px;
+
+	padding: 0 25px;
+
+	border-radius: 999px;
+
+	background: rgba(255, 255, 255, 0.82);
+
+	border: 1px solid var(--line, rgba(59, 27, 43, 0.12));
+
+	color: var(--ink, #3b1b2b);
+
+	font-family: var(--font-body, sans-serif);
+	font-size: 16px;
+	font-weight: 600;
+
+	box-shadow:
+		0 8px 30px rgba(59, 27, 43, 0.06);
+
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+
+	transition:
+		transform 0.35s var(--ease, ease),
+		border-color 0.35s ease,
+		box-shadow 0.35s ease,
+		background 0.35s ease;
+
+	animation: lang-button-enter 0.8s var(--ease, ease) both;
+}
+
+.lang-btn:nth-child(2) {
+	animation-delay: 0.08s;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+	transform: translateY(-3px);
+
+	border-color: var(--gold, #c79a55);
+
+	background: #fff;
+
+	box-shadow:
+		0 15px 40px rgba(59, 27, 43, 0.11);
+}
+
+.lang-btn:active {
+	transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------
+   PETITE FLÈCHE
+   --------------------------------------------------------- */
+
+.lang-btn::after {
+	content: "→";
+
+	font-size: 19px;
+	font-weight: 400;
+
+	color: var(--gold, #c79a55);
+
+	transition:
+		transform 0.35s var(--ease, ease),
+		color 0.35s ease;
+}
+
+.lang-btn:hover::after,
+.lang-btn:focus-visible::after {
+	transform: translateX(5px);
+	color: var(--bordeaux, #6e2f42);
+}
+
+
+/* ---------------------------------------------------------
+   PETITS MOTIFS DÉCORATIFS
+   --------------------------------------------------------- */
+
+.lang-select-page::before,
+.lang-select-page::after {
+	content: "";
+
+	position: absolute;
+
+	width: 120px;
+	height: 120px;
+
+	border: 1px solid rgba(199, 154, 85, 0.16);
+
+	pointer-events: none;
+}
+
+.lang-select-page::before {
+	top: -72px;
+	left: -72px;
+
+	border-radius: 50%;
+}
+
+.lang-select-page::after {
+	right: -72px;
+	bottom: -72px;
+
+	border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+   --------------------------------------------------------- */
+
+@keyframes lang-fade-up {
 	from {
 		opacity: 0;
 		transform: translateY(18px);
@@ -46,310 +294,78 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
-
 }
 
-
-/* Cartes flottantes */
-
-.hero-card-shape.c1 {
-	animation: card-float 7s ease-in-out infinite;
-}
-
-
-.hero-card-shape.c2 {
-	animation: card-float-two 8s ease-in-out infinite;
-}
-
-
-@keyframes card-float {
-
-	0%,
-	100% {
-		transform: rotate(7deg) translateY(0);
-	}
-
-	50% {
-		transform: rotate(5deg) translateY(-7px);
-	}
-
-}
-
-
-@keyframes card-float-two {
-
-	0%,
-	100% {
-		transform: rotate(-5deg) translateY(0);
-	}
-
-	50% {
-		transform: rotate(-7deg) translateY(6px);
-	}
-
-}
-
-
-/* Orbites très lentes */
-
-.hero-orbit-one {
-	animation: orbit-drift 14s ease-in-out infinite;
-}
-
-
-.hero-orbit-two {
-	animation: orbit-drift-two 11s ease-in-out infinite;
-}
-
-
-@keyframes orbit-drift {
-
-	0%,
-	100% {
-		transform: translate(0, 0);
-	}
-
-	50% {
-		transform: translate(-8px, -8px);
-	}
-
-}
-
-
-@keyframes orbit-drift-two {
-
-	0%,
-	100% {
-		transform: translate(0, 0);
-	}
-
-	50% {
-		transform: translate(6px, -5px);
-	}
-
-}
-
-
-/* Scroll indicator */
-
-.hero-scroll {
-	animation: scroll-pulse 2.8s ease-in-out infinite;
-}
-
-
-@keyframes scroll-pulse {
-
-	0%,
-	100% {
-		opacity: .55;
-	}
-
-	50% {
-		opacity: 1;
-	}
-
-}
-
-
-/* Apparition des éléments de la section mystère */
-
-.mystery-item {
-	opacity: .25;
-	transform: translateX(-5px);
-
-	transition:
-		opacity .6s var(--ease),
-		transform .6s var(--ease);
-}
-
-
-.reveal.in-view .mystery-item {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-
-.reveal.in-view .mystery-item:nth-child(1) {
-	transition-delay: .08s;
-}
-
-
-.reveal.in-view .mystery-item:nth-child(2) {
-	transition-delay: .16s;
-}
-
-
-.reveal.in-view .mystery-item:nth-child(3) {
-	transition-delay: .24s;
-}
-
-
-.reveal.in-view .mystery-item:nth-child(4) {
-	transition-delay: .32s;
-}
-
-
-/* Numéros du parcours */
-
-.how-step {
-	opacity: .75;
-	transition:
-		opacity .5s ease,
-		transform .5s var(--ease);
-}
-
-
-.how-step:hover {
-	opacity: 1;
-	transform: translateX(4px);
-}
-
-
-/* Bouton */
-
-.btn-final {
-	animation: final-button-breathe 3.5s ease-in-out infinite;
-}
-
-
-@keyframes final-button-breathe {
-
-	0%,
-	100% {
-		box-shadow: 0 15px 45px rgba(0,0,0,.20);
-	}
-
-	50% {
-		box-shadow: 0 18px 55px rgba(199,154,85,.16);
-	}
-
-}
-
-
-/* Symbole final */
-
-.final-symbol {
-	animation: symbol-breathe 4s ease-in-out infinite;
-}
-
-
-@keyframes symbol-breathe {
-
-	0%,
-	100% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.06);
-	}
-
-}
-
-
-/* Transition vers le jeu */
-
-.exit-veil.active .exit-veil-word {
-	animation: veil-word .5s var(--ease) both;
-}
-
-
-@keyframes veil-word {
-
+@keyframes lang-button-enter {
 	from {
 		opacity: 0;
-		transform: translateY(10px);
+		transform: translateY(15px);
 	}
 
 	to {
-		opacity: .9;
+		opacity: 1;
 		transform: translateY(0);
 	}
-
 }
 
-
-/* Respect de l'accessibilité */
-
-@media (prefers-reduced-motion: reduce) {
-
-	*,
-	*::before,
-	*::after {
-
-		animation-duration: .01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: .01ms !important;
-		scroll-behavior: auto !important;
-
+@keyframes lang-bg-appear {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -46%);
 	}
 
+	to {
+		opacity: 0.035;
+		transform: translate(-50%, -50%);
+	}
 }
-	white-space: nowrap;
+
+
+/* =========================================================
+   ANIMATIONS DES SECTIONS DE LA LANDING PAGE
+   ========================================================= */
+
+.reveal {
+	opacity: 0;
+	transform: translateY(28px);
+
+	transition:
+		opacity 0.9s var(--ease, ease),
+		transform 0.9s var(--ease, ease);
+}
+
+.reveal.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.reveal.d1 {
+	transition-delay: 0.08s;
+}
+
+.reveal.d2 {
+	transition-delay: 0.16s;
+}
+
+.reveal.d3 {
+	transition-delay: 0.24s;
+}
+
+
+/* =========================================================
+   MICRO-INTERACTIONS
+   ========================================================= */
+
+.btn-transitioning {
 	pointer-events: none;
-	line-height: 1;
 }
 
-.lang-logo {
-	font-family: var(--font-display, serif);
-	font-weight: 600;
-	font-size: 38px;
-	color: var(--ink, #3b1b2b);
-	margin-bottom: 10px;
-	animation: fade-in-up 0.9s var(--ease, ease) both;
-	position: relative;
+.exit-veil {
+	transition:
+		opacity 0.5s var(--ease, ease);
 }
 
-.lang-tagline {
-	font-size: 14px;
-	color: var(--text-soft, #8a7686);
-	margin-bottom: 50px;
-	animation: fade-in-up 0.9s var(--ease, ease) 0.12s both;
-	position: relative;
-}
-
-.lang-prompt {
-	font-size: 12px;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
-	color: var(--gold, #c79a55);
-	margin-bottom: 18px;
-	animation: fade-in-up 0.9s var(--ease, ease) 0.24s both;
-	position: relative;
-}
-
-.lang-buttons {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	width: 100%;
-	max-width: 280px;
-	animation: fade-in-up 0.9s var(--ease, ease) 0.36s both;
-	position: relative;
-}
-
-.lang-btn {
-	display: block;
-	padding: 17px;
-	border-radius: 999px;
-	background: #fff;
-	border: 1.5px solid var(--line, rgba(59,27,43,0.12));
-	color: var(--ink, #3b1b2b);
-	font-size: 15px;
-	font-weight: 600;
-	letter-spacing: 0.5px;
-	box-shadow: var(--shadow, 0 10px 34px rgba(59,27,43,0.1));
-	transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.lang-btn:hover, .lang-btn:focus-visible {
-	transform: translateY(-2px);
-	border-color: var(--gold, #c79a55);
-}
-.lang-btn.lang-suggested {
-	border-color: var(--gold, #c79a55);
-}
-
-@keyframes fade-in-up {
-	from { opacity: 0; transform: translateY(14px); }
-	to { opacity: 1; transform: translateY(0); }
-}
+.exit-veil.active {
+	opacity: 1;
+	pointer-events: all;
+	}
