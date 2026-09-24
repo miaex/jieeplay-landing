@@ -1,7 +1,5 @@
-// config.js — configuration centrale de la landing page JieePlay.
-// Quand le jeu sera prêt, changer UNIQUEMENT GAME_URL ci-dessous.
-// Tous les boutons "Continuer" de tout le site utilisent cette variable.
+// config.js — configuration centrale de JieePlay
 
 const CONFIG = {
-	GAME_URL: "#",
+	GAME_URL: "https://miaex.github.io/jieeplay-web/",
 };
